@@ -1,6 +1,45 @@
 ﻿Console.WriteLine("Please enter number");
-int enterId;
-bool controller=int.TryParse(Console.ReadLine(),out enterId);
-Console.WriteLine(controller);
-Console.ReadLine();
+bool alwaysRun = true;
+long allbasecount = 0;
+
+while (alwaysRun == true)
+{
+    long enterId;
+    bool controller = long.TryParse(Console.ReadLine(), out enterId);
+    string number = enterId.ToString();
+    int count = number.Length;
+
+    if (controller == true && count == 11)
+    {
+        long firstbase= (enterId % 10);
+
+        for (int i = 0; i < count ; i++)
+        {
+
+            long bases = (enterId % 10);
+            allbasecount = allbasecount + bases;
+            enterId = (enterId / 10);
+            
+        }
+        long result = ((allbasecount - firstbase)%2);
+
+        if (result==0)
+        {
+            Console.WriteLine("Id Correct");
+
+        }
+        else
+        {
+            Console.WriteLine("Id Wrong");
+        }
+    }
+    else
+    {
+        Console.WriteLine(enterId);
+        Console.WriteLine("11 sayıdan az");
+    }
+    Console.ReadLine();
+
+}
+
 
