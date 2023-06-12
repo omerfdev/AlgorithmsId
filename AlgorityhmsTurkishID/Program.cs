@@ -2,18 +2,17 @@
 {
     public class Program
     {
-        
         public static void Main(string[] args)
         {
             bool alwaysRun = true;
-            while (alwaysRun==true) 
+            while (alwaysRun == true)
             {
-                algorithmsturkishıddelegate();            
+                algorithmsturkishıddelegate();
             }
         }
 
         public delegate void algorithmsTurkishIDDelegate();
-        public static  algorithmsTurkishIDDelegate algorithmsturkishıddelegate=AlgorithmID;
+        public static algorithmsTurkishIDDelegate algorithmsturkishıddelegate = AlgorithmID;
         public static void AlgorithmID()
         {
             Console.WriteLine("Please enter number");
@@ -40,7 +39,6 @@
                 if (result == 0)
                 {
                     Console.WriteLine("Id Correct");
-
                 }
                 else
                 {
@@ -53,7 +51,6 @@
                 Console.WriteLine("11 sayıdan az");
             }
             Console.ReadLine();
-
         }
 
     }
