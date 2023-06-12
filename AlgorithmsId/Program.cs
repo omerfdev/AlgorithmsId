@@ -1,9 +1,15 @@
-﻿Console.WriteLine("Please enter number");
+﻿
 bool alwaysRun = true;
-long allbasecount = 0;
-
 while (alwaysRun == true)
 {
+
+}
+
+
+public static void AlgorithmID() 
+{    
+    Console.WriteLine("Please enter number");
+    long allbasecount = 0;
     long enterId;
     bool controller = long.TryParse(Console.ReadLine(), out enterId);
     string number = enterId.ToString();
@@ -11,19 +17,19 @@ while (alwaysRun == true)
 
     if (controller == true && count == 11)
     {
-        long firstbase= (enterId % 10);
+        long firstbase = (enterId % 10);
 
-        for (int i = 0; i < count ; i++)
+        for (int i = 0; i < count; i++)
         {
 
             long bases = (enterId % 10);
             allbasecount = allbasecount + bases;
             enterId = (enterId / 10);
-            
-        }
-        long result = ((allbasecount - firstbase)%2);
 
-        if (result==0)
+        }
+        long result = ((allbasecount - firstbase) % 2);
+
+        if (result == 0)
         {
             Console.WriteLine("Id Correct");
 
@@ -40,6 +46,9 @@ while (alwaysRun == true)
     }
     Console.ReadLine();
 
+
+
+
+
+
 }
-
-
