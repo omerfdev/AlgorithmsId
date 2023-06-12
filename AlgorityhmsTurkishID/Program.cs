@@ -1,4 +1,4 @@
-﻿namespace AlgorityhmsTurkishID
+﻿namespace AlgorithmsTurkishID
 {
     public class Program
     {
