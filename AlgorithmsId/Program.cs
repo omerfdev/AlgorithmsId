@@ -1,11 +1,6 @@
-﻿
 bool alwaysRun = true;
 while (alwaysRun == true)
 {
-
-}
-
-
 public static void AlgorithmID() 
 {    
     Console.WriteLine("Please enter number");
@@ -45,6 +40,10 @@ public static void AlgorithmID()
         Console.WriteLine("11 sayıdan az");
     }
     Console.ReadLine();
+}
+
+
+
 
 
 
