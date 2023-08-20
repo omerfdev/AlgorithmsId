@@ -1,5 +1,5 @@
-﻿@using static ValidationMVC.Models.Entities.Musteri;
-@model ValidationMVC.Models.Entities.Musteri
+﻿@using static AlgorithmsIdMVC.Models.Entities.Musteri;
+@model AlgorithmsIdMVC.Models.Entities.Musteri
 
 @{
     ViewData["Title"] = "Create";
@@ -10,55 +10,60 @@
 <h4>Musteri</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="MusteriID" class="control-label"></label>
-                <input asp-for="MusteriID" class="form-control" />
-                <span asp-validation-for="MusteriID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CompanyName" class="control-label"></label>
-                <input asp-for="CompanyName" class="form-control" />
-                <span asp-validation-for="CompanyName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <select class="form-control"  asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<CinsiyetTipi>()"></select>
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                <input asp-for="BirthDate"  class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label"></label>
-                <textarea asp-for="Notes" class="form-control"></textarea>
-                <span asp-validation-for="Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContactName" class="control-label"></label>
-                <input asp-for="ContactName" class="form-control" />
-                <span asp-validation-for="ContactName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="MusteriID" class="control-label"></label>
+				<input asp-for="MusteriID" class="form-control" />
+				<span asp-validation-for="MusteriID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MusteriTCK" class="control-label"></label>
+				<input asp-for="MusteriTCK" class="form-control" />
+				<span asp-validation-for="MusteriTCK" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CompanyName" class="control-label"></label>
+				<input asp-for="CompanyName" class="form-control" />
+				<span asp-validation-for="CompanyName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Gender" class="control-label"></label>
+				<select class="form-control" asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<CinsiyetTipi>()"></select>
+				<span asp-validation-for="Gender" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Email" class="control-label"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="BirthDate" class="control-label"></label>
+				<input asp-for="BirthDate" class="form-control" />
+				<span asp-validation-for="BirthDate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Notes" class="control-label"></label>
+				<textarea asp-for="Notes" class="form-control"></textarea>
+				<span asp-validation-for="Notes" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ContactName" class="control-label"></label>
+				<input asp-for="ContactName" class="form-control" />
+				<span asp-validation-for="ContactName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

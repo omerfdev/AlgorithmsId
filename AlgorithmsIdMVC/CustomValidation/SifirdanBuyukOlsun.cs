@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ValidationMVC.CustomValidation
+namespace AlgorithmsIdMVC.CustomValidation
 {
     public class SifirdanBuyukOlsun:ValidationAttribute
     {

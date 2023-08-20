@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ValidationMVC.CustomValidation;
+using AlgorithmsIdMVC.CustomValidation;
 
-namespace ValidationMVC.Models.Entities
+namespace AlgorithmsIdMVC.Models.Entities
 {
-    public class Musteri:IValidatableObject
+    public class Musteri : IValidatableObject
     {
         [Display(Name = "Musteri Kodu"), Required(ErrorMessage = "{0} Boş Geçilemez")]
         [SifirdanBuyukOlsun]
         public int MusteriID { get; set; }
+        [TCKKontrol]
+        public string MusteriTCK { get; set; }
 
         [Display(Name = "Firma Ünvanı"), Required(ErrorMessage = "{0} Boş Geçilemez")]
         [MaxLength(50, ErrorMessage = "En Fazla 50 karakterden oluşabilir.")]
@@ -30,17 +32,17 @@ namespace ValidationMVC.Models.Entities
         public string? Notes { get; set; }
 
         [Display(Name = "İlgili Kişi")]
-        [MinLength(5,ErrorMessage ="En az {1} karakter girme")]
-        [RegularExpression("\\D*",ErrorMessage ="Sadece harf girebilirsiniz.")]       
+        [MinLength(5, ErrorMessage = "En az {1} karakter girme")]
+        [RegularExpression("\\D*", ErrorMessage = "Sadece harf girebilirsiniz.")]
         public string ContactName { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (Gender==CinsiyetTipi.Kadın)
+            if (Gender == CinsiyetTipi.Kadın)
             {
-                if (Email==null)
+                if (Email == null)
                 {
-                    yield return new ValidationResult("kadın müşteriler eposta girmelidir.", new[] {"Gender","Email"});
+                    yield return new ValidationResult("kadın müşteriler eposta girmelidir.", new[] { "Gender", "Email" });
                 }
             }
         }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ValidationMVC.Models.Context;
-using ValidationMVC.Models.Entities;
+using AlgorithmsIdMVC.Models.Context;
+using AlgorithmsIdMVC.Models.Entities;
 
-namespace ValidationMVC.Controllers
+namespace AlgorithmsIdMVC.Controllers
 {
     public class MusteriController : Controller
     {
